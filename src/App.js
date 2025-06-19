@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Navigation from './components/layout/Navigation'
+import ButtonPage from './pages/ButtonPage'
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="flex min-h-screen bg-white">
+        <Navigation />
+        <main className="flex-1">
+          <Routes>
+            {/* Redirect root path to first component */}
+            <Route path="/" element={<Navigate to="/components/button" replace />} />
+            <Route path="/components/button" element={<ButtonPage />} />
+            {/* We'll add more routes as we create more components */}
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
