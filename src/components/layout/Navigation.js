@@ -9,6 +9,7 @@ const Navigation = () => {
   const components = [
     { name: "Button", path: "/components/button" },
     { name: "Card", path: "/components/card" },
+    { name: "Menu", path: "/components/menu" },
     // We'll add more as we create them
   ]
 

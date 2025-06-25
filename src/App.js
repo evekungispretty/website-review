@@ -2,6 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Navigation from './components/layout/Navigation'
 import ButtonPage from './pages/ButtonPage'
+import CardPage from './pages/CardPage'
+import MenuPage from './pages/MenuPage'
 import './App.css'
 
 function App() {
@@ -11,10 +13,10 @@ function App() {
         <Navigation />
         <main className="flex-1">
           <Routes>
-            {/* Redirect root path to first component */}
             <Route path="/" element={<Navigate to="/components/button" replace />} />
             <Route path="/components/button" element={<ButtonPage />} />
-            {/* We'll add more routes as we create more components */}
+            <Route path="/components/card" element={<CardPage />} />
+            <Route path="/components/menu" element={<MenuPage />} />
           </Routes>
         </main>
       </div>
