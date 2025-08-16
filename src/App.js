@@ -14,7 +14,7 @@ function App() {
             {/* Redirect root path to first component */}
             <Route path="/" element={<Navigate to="/components/button" replace />} />
             <Route path="/components/button" element={<ButtonPage />} />
-            {/* We'll add more routes as we create more components */}
+            {/* I'll add more routes as I create more components */}
           </Routes>
         </main>
       </div>
