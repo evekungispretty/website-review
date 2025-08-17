@@ -1,46 +1,47 @@
 import React from 'react'
-import { cn } from "../../utils/cn"
+import { Link, useLocation } from 'react-router-dom'
+import { cn } from '../../utils/cn'
 
-// Card wrapper component
-const Card = React.forwardRef(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "rounded-lg border bg-white text-gray-950 shadow-sm",
-      className
-    )}
-    {...props}
-  />
-))
-Card.displayName = "Card"
+const Navigation = () => {
+  const location = useLocation()
 
-// Card header section
-const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 p-6", className)}
-    {...props}
-  />
-))
-CardHeader.displayName = "CardHeader"
+  // List of components we'll showcase
+  const components = [
+    { name: "Button", path: "/components/button" },
+    { name: "Card", path: "/components/card" },
+    { name: "Menu", path: "/components/menu" },
+    // add more as I create them
+  ]
 
-// Card title
-const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className
-    )}
-    {...props}
-  />
-))
-CardTitle.displayName = "CardTitle"
+  return (
+    <nav className="w-64 min-h-screen bg-gray-50 border-r border-gray-200 p-4">
+      <div className="mb-8">
+        <h1 className="text-xl font-bold text-gray-900">UI Components</h1>
+        <p className="text-sm text-gray-600">Your component library</p>
+      </div>
 
-// Card content area
-const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
-))
-CardContent.displayName = "CardContent"
+      <div>
+        <h2 className="text-sm font-semibold text-gray-900 mb-3">Components</h2>
+        <ul className="space-y-1">
+          {components.map((component) => (
+            <li key={component.name}>
+              <Link
+                to={component.path}
+                className={cn(
+                  "block px-3 py-2 rounded-md text-sm transition-colors",
+                  location.pathname === component.path
+                    ? "bg-blue-100 text-blue-700 font-medium"
+                    : "text-gray-700 hover:bg-gray-100"
+                )}
+              >
+                {component.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  )
+}
 
-export { Card, CardHeader, CardTitle, CardContent }
+export default Navigation
