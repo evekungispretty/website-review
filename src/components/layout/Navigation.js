@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn'
 const Navigation = () => {
   const location = useLocation()
 
-  // List of components we'll showcase
+  // List of components to showcase
   const components = [
     { name: "Button", path: "/components/button" },
     { name: "Card", path: "/components/card" },
