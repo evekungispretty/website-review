@@ -34,3 +34,5 @@ const CardPage = () => {
         </div>
     )
 }
+
+export default CardPage
