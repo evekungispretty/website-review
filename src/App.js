@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Navigation from './components/layout/Navigation'
 import ButtonPage from './pages/ButtonPage'
+import MenuPage  from './pages/MenuPage'
 import './App.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             {/* Redirect root path to first component */}
             <Route path="/" element={<Navigate to="/components/button" replace />} />
             <Route path="/components/button" element={<ButtonPage />} />
+            <Route path="/components/menu" element={<MenuPage />} />
             {/* I'll add more routes as I create more components */}
           </Routes>
         </main>
