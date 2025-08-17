@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navigation from './components/layout/Navigation'
 import ButtonPage from './pages/ButtonPage'
 import MenuPage  from './pages/MenuPage'
+import CardPage from './pages/CardPage'
 import './App.css'
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
             <Route path="/" element={<Navigate to="/components/button" replace />} />
             <Route path="/components/button" element={<ButtonPage />} />
             <Route path="/components/menu" element={<MenuPage />} />
+            <Route path="/components/card" element={<CardPage />} />
+
             {/* I'll add more routes as I create more components */}
           </Routes>
         </main>
