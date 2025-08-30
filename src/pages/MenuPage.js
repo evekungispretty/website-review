@@ -22,7 +22,7 @@ const MenuPage = () => {
       </div>
 
       {/* Breadcrumb Example */}
-      <section className="mb-12">
+      <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Breadcrumb Navigation</h2>
         <Card className="p-6 mb-4">
           <Breadcrumb 

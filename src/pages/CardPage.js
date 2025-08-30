@@ -12,9 +12,9 @@ const CardPage = () => {
     }
 
     return (
-        <div classNmae="max-w-4xl mx-auto p-8">
-            <div>
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">Card</h1>
+        <div className="max-w-6xl mx-auto p-8">
+            <div className="mb-8">
+                <h1 className="text-4xl font-bold text-gray-900 mb-2">Cards</h1>
                 <p className="text-gray-600">
                     A flexible card component for displaying content in a structured way.
                 </p>
